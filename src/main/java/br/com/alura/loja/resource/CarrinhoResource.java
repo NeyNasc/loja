@@ -27,7 +27,6 @@ public class CarrinhoResource {
     }
 	
     @POST
-    @Produces(MediaType.APPLICATION_XML)
     public Response adiciona(String conteudo) {
         Carrinho carrinho = (Carrinho) new XStream().fromXML(conteudo);
         new CarrinhoDAO().adiciona(carrinho);
