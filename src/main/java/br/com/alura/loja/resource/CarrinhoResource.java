@@ -19,4 +19,9 @@ public class CarrinhoResource {
         Carrinho carrinho = new CarrinhoDAO().busca(id);
         return carrinho.toXML();
     }
+	
+    @POST
+    public String adiciona() {
+
+    }
 }
