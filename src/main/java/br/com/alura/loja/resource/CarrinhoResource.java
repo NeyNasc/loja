@@ -7,6 +7,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import com.thoughtworks.xstream.XStream;
+
 import br.com.alura.loja.dao.CarrinhoDAO;
 import br.com.alura.loja.modelo.Carrinho;
 
@@ -24,6 +26,7 @@ public class CarrinhoResource {
     @POST
     @Produces(MediaType.APPLICATION_XML)
     public String adiciona(String conteudo) {
+    	Carrinho carrinho = (Carrinho) new XStream().fromXML(conteudo);
     	return "<status>Sucesso</sucesso>";
     }
 }
