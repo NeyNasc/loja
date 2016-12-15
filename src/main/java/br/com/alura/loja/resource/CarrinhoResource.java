@@ -1,6 +1,7 @@
 package br.com.alura.loja.resource;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -21,7 +22,8 @@ public class CarrinhoResource {
     }
 	
     @POST
-    public String adiciona() {
-
+    @Produces(MediaType.APPLICATION_XML)
+    public String adiciona(String conteudo) {
+    	return "<status>Sucesso</sucesso>";
     }
 }
