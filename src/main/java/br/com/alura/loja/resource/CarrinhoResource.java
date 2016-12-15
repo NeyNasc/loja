@@ -11,10 +11,10 @@ import br.com.alura.loja.modelo.Carrinho;
 @Path("carrinhos")
 public class CarrinhoResource {
 	
-	@GET
-	@Produces(MediaType.APPLICATION_XML)
-	public String busca(){
-		Carrinho carrinho = new CarrinhoDAO().busca(1l);
-		return carrinho.toXML();
-	}
+    @GET
+    @Produces(MediaType.APPLICATION_XML)
+    public String busca(long id) {
+        Carrinho carrinho = new CarrinhoDAO().busca(1l);
+        return carrinho.toXML();
+    }
 }
