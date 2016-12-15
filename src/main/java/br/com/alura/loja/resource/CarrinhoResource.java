@@ -40,6 +40,8 @@ public class CarrinhoResource {
     @Path("{id}/produtos/{produtoId}")
     @DELETE
     public Response removeProduto(@PathParam("id") long id, @PathParam("produtoId") long produtoId) {
-
+        Carrinho carrinho = new CarrinhoDAO().busca(id);
+        carrinho.remove(produtoId);
+        return Response.ok().build();
     }
 }
